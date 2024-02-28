@@ -1,0 +1,42 @@
+<app-grid-table
+  #gridTable
+  [width]="'100%'"
+  [height]="100"
+  [dateTable]="source"
+  [columns]="col"
+  [showtoolbar]="false"
+  [editable]="false"
+  [autorowheight]="true"
+  [autoheight]="true"
+  [pageable]="true"
+></app-grid-table>
+<app-modal-box #modal [modalTitle]="'User update'">
+    <form [formGroup]="myForm" class="needs-validation" novalidate>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control"  type="text" formControlName="name" id="name" placeholder="Enter your name" required>
+        <div *ngIf="myForm.controls.name.errors && (myForm.controls.name.dirty || myForm.controls.name.touched)" class="text-danger">
+          <div>Name is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input class="form-control"  type="text" formControlName="address" id="address" placeholder="Enter your address">
+        <div *ngIf="myForm.controls.address.errors && (myForm.controls.address.dirty || myForm.controls.address.touched)" class="text-danger">
+          Address is required .
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input class="form-control" type="email" formControlName="email" id="email" placeholder="Enter your email">
+        <div *ngIf="myForm.controls.email.errors && (myForm.controls.email.dirty || myForm.controls.email.touched)" class="text-danger">
+          <div *ngIf="myForm.controls.email.errors.required">Email is required.</div>
+          <div *ngIf="myForm.controls.email.errors.email">Invalid email format.</div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline-dark float-right" (click)="onSubmit()">Edit</button>
+    </form>
+
+</app-modal-box>

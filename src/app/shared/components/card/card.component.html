@@ -1,0 +1,11 @@
+<div class="card m-0 h-100">
+  <div class="card-body">
+    <div #cardTitle *ngIf="cardTitleChildren">
+      <ng-content select="[title]"></ng-content>
+    </div>
+    <div  #cardBody *ngIf="cardBodyChildren">
+      <ng-content select="[body]"></ng-content>
+    </div>
+
+  </div>
+</div>

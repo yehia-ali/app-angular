@@ -1,0 +1,22 @@
+<app-card >
+  <div body>
+    <h3 title>
+      {{title}}
+    </h3>
+    <ul class="list-unstyled" *ngIf="items" >
+      <li *ngFor="let item of items" class="row">
+        <div class="col">
+          {{item?.title}}:
+        </div>
+        <div class="col">
+          <div class="text-right text-muted">
+            {{item?.value}}
+          </div>
+        </div>
+        <div class="col-12">
+          <hr class="m-0">
+        </div>
+      </li>
+    </ul>
+</div>
+</app-card>

@@ -1,0 +1,24 @@
+<div class="top-menu px-3 py-2">
+  <div class="navbar-header">
+    <a class="navbar-brand" [routerLink]="'home'">
+      <h1 class="font-weight-bold">{{'dashboard' | capitalize}}</h1>
+    </a>
+  </div>
+</div>
+<div id="side-menu" class="hidden-xs affix" data-spy="affix" data-offset-top="0">
+  <div class="profile-block px-3">
+    <img [src]="'assets/imgs/jon.png'" class="rounded-circle">
+    <h4 class="profile-title">{{userName }}</h4>
+  </div>
+
+  <ul class="list-group list-group-flush nav nav-pills nav-stacked">
+    <li class="list-group-item border-0 bg-transparent" *ngFor="let item of items"  >
+      <a  [routerLink]="item?.link"  class="transition" [routerLinkActive]="'text-white'">
+        <span [class]="item?.iconClass" class="glyphicon" aria-hidden="true"></span>
+        {{item?.pageName | capitalize}}
+      </a>
+    </li>
+
+
+  </ul>
+</div>

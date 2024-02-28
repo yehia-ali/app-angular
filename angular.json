@@ -28,6 +28,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/jqwidgets-ng/jqwidgets/styles/jqx.base.css",
+              "src/assets/styles/base.css",
+              "src/assets/styles/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []
